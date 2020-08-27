@@ -32,7 +32,7 @@ def get_current_branch(dir):
 
     from git import Repo
 
-    repo = Repo(dir)
+    repo = Repo("/home/zhpeng/oac-explore")
     return repo.active_branch.name
 
 
