@@ -131,8 +131,11 @@ def domain_to_env(name):
     #    HopperEnv, AntEnv, Walker2dEnv
 
     import gym
-
-    env_name = name.capitalize() + "-v3"
+    print("We are creating environment: ", name)
+    if name == "halfcheetah":
+        env_name = "HalfCheetah-v3"
+    else:
+        env_name = name.capitalize() + "-v3"
     return lambda: gym.make(env_name)
 
     #return {
@@ -149,11 +152,11 @@ def domain_to_epoch(name):
 
     return {
         'invertedpendulum': 300,
-        'humanoid': 9000,
-        'halfcheetah': 5000,
-        'hopper': 2000,
-        'ant': 5000,
-        'walker2d': 5000
+        'humanoid': 1000,
+        'halfcheetah': 1000,
+        'hopper': 1000,
+        'ant': 1000,
+        'walker2d': 1000
     }[name]
 
 

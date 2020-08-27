@@ -116,7 +116,7 @@ class SACTrainer(object):
         else:
             alpha_loss = 0
             alpha = 1
-
+        #torch.autograd.set_detect_anomaly(True)
         q_new_actions = torch.min(
             self.qf1(obs, new_obs_actions),
             self.qf2(obs, new_obs_actions),
